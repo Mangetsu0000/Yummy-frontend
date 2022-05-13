@@ -1,0 +1,18 @@
+.recipe {
+  padding: 10px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  max-width: 250px;
+}
+
+.recipe-img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
