@@ -1,0 +1,21 @@
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin input {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.yummy-img {
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+}
