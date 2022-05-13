@@ -1,0 +1,8 @@
+.recipes-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
+  
+}
