@@ -1,9 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import { map } from 'rxjs';
 import { apiUrl } from 'src/environments/environment';
-import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root',
@@ -20,18 +19,15 @@ export class AuthService {
         ...data,
       })
       .pipe(
-        map((user) => {
-          // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
-          console.log('USER>>>', user);
-          return user;
+        map((res) => {
+          console.log('Toker>>>', res);
+          localStorage.setItem('token', res.access_token);
+          return res;
         })
       );
   }
 
   signup(data: any) {
-    console.log('DATA>>>', data);
-    console.log(apiUrl);
-
     return this.http
       .post<any>(`${apiUrl}/auth/signup`, {
         ...data,
@@ -43,5 +39,18 @@ export class AuthService {
           return user;
         })
       );
+  }
+
+  logoutUser() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  isLoggedIn() {
+    return !!localStorage.getItem('token');
   }
 }
