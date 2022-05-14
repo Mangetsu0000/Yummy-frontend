@@ -4,6 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AuthGuard } from './guard/auth.guard';
+import { AuthService } from './services/auth.service';
+import { RecipeService } from './services/recipe.service';
+import { UserService } from './services/user.service';
+
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
@@ -31,7 +36,7 @@ import { RecipeComponent } from './components/recipe/recipe.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthService, RecipeService, UserService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
