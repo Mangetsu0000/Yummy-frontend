@@ -1,3 +1,36 @@
 .labels {
   font-size: 11px;
 }
+.profile-card,
+.container,
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-card,
+.action-buttons {
+  flex-direction: column;
+}
+
+form {
+  flex: 4;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.profile-info h2,
+.profile-info h3,
+p,
+h1 {
+  text-align: center;
+}
+.btn {
+  width: 150px;
+  margin: 7px;
+}

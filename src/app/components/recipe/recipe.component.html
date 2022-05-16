@@ -4,9 +4,14 @@
     class="card-img-top recipe-img"
   />
   <div class="card-body">
-    <h5 class="card-title">{{ recipe.title }}</h5>
-    <p class="card-text">{{ recipe.description }}</p>
-    <span class="card-text">{{ recipe.createdAt }}</span>
+    <h5 class="card-title">Yummy {{ recipe.title }} Recipe</h5>
+    <p class="card-text">
+      Recipe description: <br />
+      {{ recipe.description }}
+    </p>
+    <span class="card-text"
+      >Created At: <br />{{ recipe.createdAt | date }}
+    </span>
 
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>

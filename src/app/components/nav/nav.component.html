@@ -11,12 +11,8 @@
       </li>
 
       <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a
-          routerLink="/s"
-          class="nav-link"
-          style="cursor: pointer"
-          (click)="onLogout()"
-          >My Recipes</a
+        <a routerLink="/profile" class="nav-link" style="cursor: pointer"
+          >My Profile</a
         >
       </li>
 
